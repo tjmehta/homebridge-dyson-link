@@ -64,7 +64,8 @@ class DysonLinkAccessory {
             .on("get", this.device.getAirQuality.bind(this.device));
 
 
-        if (this.device.model == "438" || this.device.model == "520" || this.device.model == "527") {
+        if (this.device.model == "438" || this.device.model == "520" || this.device.model == "
+            ") {
             this.airSensor.getCharacteristic(Characteristic.PM2_5Density)
                 .on("get", this.device.getPM2_5Density.bind(this.device));
             this.airSensor.getCharacteristic(Characteristic.PM10Density)
@@ -175,7 +176,7 @@ class DysonLinkAccessory {
                 .on("set", this.device.setCurrentHeaterCoolerState.bind(this.device))
                 .on("get", this.device.getCurrentHeaterCoolerState.bind(this.device));
 
-            if (this.device.model === '527') {
+            if (this.device.model === '527' || this.device.model === '455') {
                 this.heater.getCharacteristic(Characteristic.TargetHeaterCoolerState)
                     .on("get", this.device.getHeaterCoolerState.bind(this.device))
                     .on("set", this.device.setHeaterCoolerState.bind(this.device))
