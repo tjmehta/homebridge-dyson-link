@@ -42,7 +42,7 @@ class DysonLinkAccessory {
     initSensor() {
         this.log("Init Sensor for " + this.displayName);
 
-        if (this.device.model !== '527') {
+        if (this.device.model !== '527' && this.device.model !== '455') {
             // Don't add temperature sensor on HP04 since heater already acts as temperature sensor
             // TODO: maybe we could do this to all devices that have heatAvailable?
             this.temperatureSensor = this.getService(Service.TemperatureSensor);
